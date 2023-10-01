@@ -1,0 +1,223 @@
+<html>
+<head>
+  <title>Is Odd or Even</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Onest:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Sans+3:ital,wght@1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+  background-color: #fff;
+  font-family: 'Onest', sans-serif;
+}
+
+.container-top {
+  height: 100%;
+  background: rgb(117,200,128);
+background: linear-gradient(168deg, rgba(117,200,128,1) 0%, rgba(6,17,80,1) 100%);
+  color: white;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  & h1 {
+    margin-top: 100px;
+    text-align :center;
+    letter-spacing: 2px;
+
+    &.flexed-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+
+      @media screen and (max-width: 400px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  & p {
+    text-align :center;
+    letter-spacing: 2px;
+  }
+}
+
+/* Default styling for the divider */
+.divider {
+  width: 20%; /* Set the default width for large screens */
+  height: 1px; /* Set the height to create a horizontal line */
+  background: #e6e6e6;
+  margin: 0 auto; /* Center the divider horizontally */
+
+  &.dark {
+    background: #333;
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 767px) {
+  .divider {
+    width: 90%; /* Set the width for mobile screens */
+  }
+}
+</style>
+
+</head>
+<body>
+  <div class="container-top">
+    <div id="alert" class="absolute d-flex sticky gap-1 alert alert-info fade show visually-hidden justify-content-end align-items-end" style="width: fit-content; float: right;" role="alert">
+      <span id="message" class="text-center"></span>
+      <button onclick="hideAlertContainer()" type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <h1 class="flexed-heading">
+      <a target="_blank" href="https://github.com/mbos2/is-odd-or-even" type="button" class="btn btn-outline-light btn-lg px-3 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        <span class="visually-hidden">Github</span>
+      </a>
+      <span>Is Odd or Even</span>
+    </h1>
+    <p>Check if a number is odd or even!</p>
+    <p>or . . . </p>
+    <p>♪♪♪ ヽ( ᐖゞ) Get rick rolled ♪♪♪ ヽ( ᐖゞ)</p>
+    <div class="divider"></div>
+    <div class="container-md w-40 mt-4">
+      <div class="input-group mb-3">
+        <input required id="number" type="text" class="form-control" placeholder="Number . . . or whatever" aria-label="Number" aria-describedby="button-addon2">
+      </div>
+      <div class="input-group mb-3">
+        <button onclick="checkNumber()" class="btn btn-dark" type="button" id="button-addon2">Check it . . . NOW!</button>
+        <p class="mt-4" style="text-align: left;"><strong>HEH, CHECK THIS NOTE: </strong>By checking if a number is odd or even, you automatically agree to be rickrolled if you send a value that is not a number that can be checked . . . </p>
+        <p style="text-align: right; width: 100%;">If you wonder why . . . well, why not ♪♪♪ ヽ( ᐖゞ)</p>
+      </div>
+      <div class="mt-4 mb-4 d-flex w-full align-items-center justify-content-center">
+        <div id="spinner" class="spinner-border text-light d-none" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div id="number-result" class="d-flex flex-wrap flex-column justify-content-center align-items-center m-auto mt-4">
+        <h2 class="text-center">RESULT </h2>
+        <div class="fs-3 link-underline-light text-light text-break" href="" target="_blank" id="number-result-value"></div>
+      </div>
+      <div id="social-media-buttons" class="mt-4 d-flex justify-content-center gap-4"></div>
+    </div>
+  </div>
+  <script>
+    const domain = 'https://65196cbac2fdc66e9ea1.appwrite.global';
+    const numberInput = document.querySelector('#number');
+    const spinner = document.querySelector('#spinner');
+    const alertContainer = document.querySelector('#alert');
+    const messageContainer = document.querySelector('#message');
+    const socialMediaContainer = document.querySelector('#social-media-buttons');
+    const numberResultValue = document.querySelector('#number-result-value');
+
+    const generateTwitterButton = (text) => {
+      console.log(url)
+      const btnLink = document.createElement('a');
+      btnLink.setAttribute('href', `https://twitter.com/intent/tweet?text=${text}}`);
+      btnLink.setAttribute('target', '_blank');
+      btnLink.setAttribute('class', 'btn btn-outline-light');
+
+      const btnIcon = document.createElement('i');
+      btnIcon.setAttribute('class', 'bi bi-twitter');
+      btnIcon.setAttribute('style', 'font-size: 1.5rem;');
+      btnLink.appendChild(btnIcon);
+ 
+      socialMediaContainer.appendChild(btnLink);
+    }
+
+    const generateFacebookButton = (text) => {
+      const btnLink = document.createElement('a');
+      btnLink.setAttribute('href', `https://www.facebook.com/sharer/sharer.php?quote=${text}`);
+      btnLink.setAttribute('target', '_blank');
+      btnLink.setAttribute('class', 'btn btn-outline-light');
+
+      const btnIcon = document.createElement('i');
+      btnIcon.setAttribute('class', 'bi bi-facebook');
+      btnIcon.setAttribute('style', 'font-size: 1.5rem;');
+      btnLink.appendChild(btnIcon);
+ 
+      socialMediaContainer.appendChild(btnLink);
+    }
+
+    const clearValues = () => {
+      numberResultValue.innerHTML = '';
+    }
+
+    const showSpinner = () => {
+      spinner.classList.remove('d-none');
+    }
+
+    const hideSpinner = () => {
+      spinner.classList.add('d-none');
+    }
+
+    const showAlertContainer = (message) => {
+      messageContainer.innerText = message;
+      alertContainer.classList.remove('visually-hidden');
+    }
+
+    const hideAlertContainer = () => {
+      alertContainer.classList.add('visually-hidden');
+      messageContainer.innerText = "";
+    }
+
+    const rickRoll = () => {
+      hideSpinner();
+      const rickRollUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      showAlertContainer('Ok . . . rickroll it is . . . Redirecting in 3 seconds');
+       setTimeout(() => {
+          window.location.href = rickRollUrl;
+      }, 3000);
+      window.
+      return;
+    }
+
+    let maxRetries = 3;
+    const checkNumber = async () => {
+      clearValues();
+      showSpinner();
+      hideAlertContainer();
+      const numberValueTrim = numberInput.value.trim();
+      const response = fetch(domain, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            number: numberInput.value
+          })
+      });
+      response.then((res) => {
+        return res.json();
+      }).then(data => {
+        console.log(data)
+        if (data.ok) {
+          console.log(data)
+          console.log('Printing data ...')
+          hideSpinner();
+          numberResultValue.innerHTML = data.message;
+          console.log(data)
+        } else {
+          hideSpinner();
+          console.log(data)
+          maxRetries = maxRetries -1;
+          if (maxRetries === 0) {
+            return rickRoll();
+          }
+          showAlertContainer(`${data.message} . . . Do not make me rickroll you . . . You got ${maxRetries} retries left`);
+          numberResultValue.innerHTML = data.message;
+          clearValues();
+          throw new Error('Something went wrong');
+        }
+      });
+    }
+
+    
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</html>

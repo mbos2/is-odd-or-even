@@ -1,0 +1,24 @@
+{
+    "projectId": "is-odd-even",
+    "projectName": "Is Odd / Even",
+    "functions": [        {
+      "$id": "6530aw4bt043e0rf5acd1e2e",
+      "name": "Is Odd / Even",
+      "runtime": "node-18.0",
+      "execute": [
+          "any"
+      ],
+      "events": [],
+      "schedule": "",
+      "timeout": 120,
+      "enabled": true,
+      "logging": true,
+      "entrypoint": "src/main.js",
+      "commands": "npm install",
+      "ignore": [
+          "node_modules",
+          ".npm"
+      ],
+      "path": "functions/is-odd-or-even"
+  }]
+}
